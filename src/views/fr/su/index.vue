@@ -12,7 +12,7 @@
           v-hasPermi="['system:dict:add']"
         >新增</el-button>
       </el-col>
-      <el-col :span="1.5">
+      <!-- <el-col :span="1.5">
         <el-button
           type="success"
           plain
@@ -22,7 +22,7 @@
           @click="handleUpdate"
           v-hasPermi="['system:dict:edit']"
         >修改</el-button>
-      </el-col>
+      </el-col> -->
     </el-row>
 
     <el-table v-loading="loading" :data="typeList" @selection-change="handleSelectionChange">
@@ -159,6 +159,8 @@ export default {
         id: undefined,
         name: undefined,
         type: undefined,
+        remark: undefined,
+        
       }
       this.resetForm("form")
     },

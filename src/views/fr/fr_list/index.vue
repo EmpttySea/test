@@ -12,7 +12,7 @@
           v-hasPermi="['system:dict:add']"
         >新增</el-button>
       </el-col>
-      <el-col :span="1.5">
+      <!-- <el-col :span="1.5">
         <el-button
           type="success"
           plain
@@ -22,7 +22,7 @@
           @click="handleUpdate"
           v-hasPermi="['system:dict:edit']"
         >修改</el-button>
-      </el-col>
+      </el-col> -->
 
     </el-row>
 
@@ -196,19 +196,14 @@ export default {
       this.single = selection.length!=1
       this.multiple = !selection.length
     },
-    /** 修改按钮操作 */
     handleUpdate(row) {
       this.reset()
       const id = row.id || this.ids
       this.form = row
       this.form.subjectId = row.subject.id
       this.open = true
-        this.title = "修改财务类型"
-      // getType(id).then(response => {
-      //   this.form = response.data
-      //   this.open = true
-      //   this.title = "修改财务类型"
-      // })
+      this.title = "修改财务类型"
+
     },
     /** 提交按钮 */
     submitForm: function() {
@@ -221,11 +216,6 @@ export default {
               this.open = false
               this.getList()
             })
-            // updateType(this.form).then(response => {
-            //   this.$modal.msgSuccess("修改成功")
-            //   this.open = false
-            //   this.getList()
-            // })
           } else {
             this.form.recordDate = formatDateTime()
             postfr(this.form).then(res => {

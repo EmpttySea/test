@@ -54,7 +54,7 @@ export default {
 
       const option = {
         title: {
-          text: '近30天命令调用统计',
+          text: '',
           left: 'left',
           textStyle: {
             fontSize: 14,
